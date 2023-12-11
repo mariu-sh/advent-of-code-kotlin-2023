@@ -1,6 +1,7 @@
 fun main() {
     fun part1(input: List<String>): Int {
-        return input.size
+        return input.map { line -> line.filter { it.isDigit() } }
+                .sumOf { "${it.first()}${it.last()}".toInt() }
     }
 
     fun part2(input: List<String>): Int {
